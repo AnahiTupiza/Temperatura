@@ -48,6 +48,9 @@ color: rgb(78, 154, 6);</string>
          <property name="styleSheet">
           <string notr="true">color: rgb(138, 226, 52);</string>
          </property>
+         <property name="minimum">
+          <number>-18</number>
+         </property>
         </widget>
        </item>
       </layout>
@@ -57,8 +60,10 @@ color: rgb(78, 154, 6);</string>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="font">
        <font>
-        <family>URW Gothic</family>
-        <pointsize>13</pointsize>
+        <family>Sawasdee</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -77,7 +82,11 @@ color: rgb(32, 74, 135);</string>
         </widget>
        </item>
        <item>
-        <widget class="QDial" name="inFahr"/>
+        <widget class="QDial" name="inFahr">
+         <property name="maximum">
+          <number>210</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -97,5 +106,38 @@ color: rgb(32, 74, 135);</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>inCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>101</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>291</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
